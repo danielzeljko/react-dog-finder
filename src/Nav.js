@@ -1,9 +1,19 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { v4 as uuid } from "uuid";
 
-function Nav({ dogNames }) {
+/** Render Nav bar
+ *
+ * Props
+ * - dogs
+ *
+ * App -> Nav
+ */
+
+function Nav({ dogs }) {
   return (
-    <nav>
-      {/* {dogNames.map(dn => <Link to="">{dn.name}</Link>)} */}
+    <nav className="NavBar">
+      {dogs.map(dog => <NavLink key={uuid()} to={`/dogs/${dog.name.toLowerCase()}`}>
+        {dog.name}</NavLink>)}
     </nav>
   );
 }

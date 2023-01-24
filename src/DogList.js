@@ -1,18 +1,22 @@
-import axios from "axios";
-import { useState } from "react";
+import { v4 as uuid } from "uuid";
 
+/** Render list of dogs
+ *
+ * Props
+ * - dogs
+ *
+ * Routes -> DogList
+ */
 function DogList({ dogs }) {
   return (
-    <div>
-      <div>
-        {dogs.map(d => (
-          <div key={d.name}>
-            <p>{d.name}</p>
-            <img src={d.src} alt="" />
-          </div>
-        ))}
-      </div>
-    </div>
+    <>
+      {dogs.map((d) => (
+        <div key={uuid()}>
+          <p>{d.name}</p>
+          <img src={`/${d.src}.jpg`} alt={`${d.name}`} />
+        </div>
+      ))}
+    </>
   );
 }
 

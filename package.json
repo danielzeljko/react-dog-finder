@@ -13,6 +13,7 @@
     "react-dom": "*",
     "react-router-dom": "*",
     "react-scripts": "*",
+    "uuid": "^9.0.0",
     "web-vitals": "*"
   },
   "scripts": {
